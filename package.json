@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-  "test": "jest"
-},
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aasthakumarii/devops-cicd-aws.git"
