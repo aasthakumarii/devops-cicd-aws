@@ -2,9 +2,7 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   test:
@@ -20,7 +18,10 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Fix permissions
+        run: chmod +x ./node_modules/.bin/jest
 
       - name: Run tests
         run: npm test
