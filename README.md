@@ -49,7 +49,7 @@ Code Push → GitHub Actions → Install Dependencies → Run Tests → Build Do
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/devops-cicd-aws.git
+git clone https://github.com/aasthakumarii/devops-cicd-aws.git
 cd devops-cicd-aws
 ```
 
