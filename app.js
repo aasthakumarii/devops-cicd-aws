@@ -19,3 +19,5 @@ app.listen(3000, () => {
 
 // app.js
 console.log("Testing dev branch");
+
+echo "Deployed via CI/CD 🚀"
