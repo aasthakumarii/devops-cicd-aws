@@ -1,40 +1,39 @@
 # 🚀 DevOps CI/CD Pipeline with Docker & GitHub Actions
 
+!\[CI](https://github.com/aasthakumarii/devops-cicd-aws/actions/workflows/ci.yml/badge.svg)
+
 This project demonstrates a complete **CI/CD pipeline** using **GitHub Actions, Docker, and Node.js**. It automates testing, Docker image creation, and pushing images to Docker Hub.
 
 ---
 
 ## 📌 Features
 
-- ✅ Automated CI pipeline on every push  
-- 🧪 Unit testing using Jest  
-- 🐳 Docker image build after successful tests  
-- 📦 Push Docker image to Docker Hub  
-- 🔐 Secure credential management using GitHub Secrets  
-- 🌿 Branch-based workflow (`dev` → `main`)  
+- ✅ Automated CI pipeline on every push
+- 🧪 Unit testing using Jest
+- 🐳 Docker image build after successful tests
+- 📦 Push Docker image to Docker Hub
+- 🔐 Secure credential management using GitHub Secrets
+- 🌿 Branch-based workflow (`dev` → `main`)
 
 ---
 
 ## ⚙️ Tech Stack
 
-- Node.js  
-- Jest  
-- Docker  
-- GitHub Actions  
-- Docker Hub  
+- Node.js
+- Jest
+- Docker
+- GitHub Actions
+- Docker Hub
 
 ---
 
 ## 🔁 CI/CD Pipeline Flow
 
-
 Code Push → GitHub Actions → Install Dependencies → Run Tests → Build Docker Image → Push to Docker Hub
-
 
 ---
 
 ## 📂 Project Structure
-
 
 .
 ├── .github/workflows/ci.yml # CI/CD pipeline configuration
@@ -43,28 +42,29 @@ Code Push → GitHub Actions → Install Dependencies → Run Tests → Build Do
 ├── index.js # Application entry point
 └── tests/ # Jest test files
 
-
 ---
 
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/yourusername/devops-cicd-aws.git
 cd devops-cicd-aws
 ```
+
 2. Install dependencies
-npm install
+   npm install
 3. Run tests
-npm test
+   npm test
 4. Run the app
-node index.js
-🐳 Docker Usage
-Build Docker Image
-docker build -t yourusername/devops-app .
-Run Container
-docker run -p 3000:3000 yourusername/devops-app
-🔐 GitHub Secrets Setup
+   node index.js
+   🐳 Docker Usage
+   Build Docker Image
+   docker build -t yourusername/devops-app .
+   Run Container
+   docker run -p 3000:3000 yourusername/devops-app
+   🔐 GitHub Secrets Setup
 
 Add the following secrets in your GitHub repository:
 
