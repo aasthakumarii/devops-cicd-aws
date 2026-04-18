@@ -14,6 +14,7 @@ This project demonstrates a complete **CI/CD pipeline** using **GitHub Actions, 
 - 📦 Push Docker image to Docker Hub
 - 🔐 Secure credential management using GitHub Secrets
 - 🌿 Branch-based workflow (`dev` → `main`)
+- S3 artifacts
 
 ---
 
