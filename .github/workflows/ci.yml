@@ -69,3 +69,22 @@ jobs:
             docker run -d --name app -p 80:3000 ${{ secrets.DOCKER_USERNAME }}/devops-app:latest
 
             echo "Deployed via CI/CD 🚀"
+
+      # 10. Create artifact (example log file)
+      - name: Create build log
+        run: |
+          echo "Build successful 🚀" > build-log.txt
+          echo "Commit: $GITHUB_SHA" >> build-log.txt
+          echo "Time: $(date)" >> build-log.txt
+
+      # 11. Upload to S3
+      - name: Upload to S3
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Copy file to S3
+        run: |
+          aws s3 cp build-log.txt s3://${{ secrets.S3_BUCKET_NAME }}/build-log-${{ github.run_number }}.txt
