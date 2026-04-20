@@ -40,7 +40,7 @@ This demo shows:
 
 ## 🏗️ Architecture Diagram
 
-![Architecture Diagram](./architecture.png)
+![Architecture Diagram](./assets/architecture.png)
 
 ---
 
