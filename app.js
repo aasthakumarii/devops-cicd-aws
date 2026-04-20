@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello from CI/CD Project 🚀');
+  res.send('Hello from final CI/CD Project 🚀');
 });
 
 app.get('/health', (req, res) => {
@@ -19,5 +19,3 @@ app.listen(3000, () => {
 
 // app.js
 console.log("Testing dev branch");
-
-echo "Deployed via CI/CD 🚀"
