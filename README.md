@@ -2,102 +2,139 @@
 
 !\[CI](https://github.com/aasthakumarii/devops-cicd-aws/actions/workflows/ci.yml/badge.svg)
 
-This project demonstrates a complete **CI/CD pipeline** using **GitHub Actions, Docker, and Node.js**. It automates testing, Docker image creation, and pushing images to Docker Hub.
+This project demonstrates a complete **CI/CD pipeline with automated deployment** using **GitHub Actions, Docker, and AWS EC2**.
+
+It covers the full lifecycle: **code → test → build → deploy → monitor**.
+
+---
+
+## 🎥 Demo
+
+Watch the full CI/CD pipeline in action:
+
+https://youtu.be/PDV7gp-cA7E
+
+This demo shows:
+
+- Code push to GitHub
+- GitHub Actions pipeline execution
+- Docker image build & push
+- Automatic deployment to AWS EC2
+- Live application update
 
 ---
 
 ## 📌 Features
 
-- ✅ Automated CI pipeline on every push
+- ✅ Automated CI/CD pipeline on every push
 - 🧪 Unit testing using Jest
-- 🐳 Docker image build after successful tests
-- 📦 Push Docker image to Docker Hub
-- 🔐 Secure credential management using GitHub Secrets
-- 🌿 Branch-based workflow (`dev` → `main`)
-- S3 artifacts
+- 🐳 Docker image build & push to Docker Hub
+- 🚀 Automatic deployment to AWS EC2 via SSH
+- 🔄 Zero-downtime container redeployment
+- 🔐 Secure credentials using GitHub Secrets
+- ☁️ Cloud deployment on AWS EC2
+- 📊 Monitoring with CloudWatch & UptimeRobot
+- 📦 S3 artifact storage
+
+---
+
+## 🏗️ Architecture Diagram
+
+![Architecture Diagram](./architecture.png)
 
 ---
 
 ## ⚙️ Tech Stack
 
-- Node.js
-- Jest
-- Docker
-- GitHub Actions
-- Docker Hub
+- **Backend:** Node.js, Express
+- **Testing:** Jest
+- **CI/CD:** GitHub Actions
+- **Containerization:** Docker
+- **Cloud:** AWS EC2, AWS S3
+- **Monitoring:** CloudWatch, UptimeRobot
+- **Version Control:** Git & GitHub
 
 ---
 
 ## 🔁 CI/CD Pipeline Flow
 
-Code Push → GitHub Actions → Install Dependencies → Run Tests → Build Docker Image → Push to Docker Hub
+## Code Push → GitHub Actions → Install Dependencies → Run Tests → Build Docker Image → Push to Docker Hub → Deploy to EC2 → Live Application
+
+## 🚀 Live Deployment
+
+⚠️ The EC2 instance may be stopped to avoid unnecessary costs.  
+The application can be redeployed anytime using the CI/CD pipeline.
 
 ---
 
-## 📂 Project Structure
+## 🐳 Docker Usage
 
-.
-├── .github/workflows/ci.yml # CI/CD pipeline configuration
-├── Dockerfile # Docker build configuration
-├── package.json # Project dependencies
-├── index.js # Application entry point
-└── tests/ # Jest test files
+```bash
+docker build -t aasthakumarii/devops-app .
+docker run -d -p 3000:3000 aasthakumarii/devops-app
+```
 
 ---
 
-## 🚀 Getting Started
+## ☁️ AWS Deployment
 
-### 1. Clone the repository
+EC2 (Ubuntu)
+Docker installed
+Port 80 exposed
+Auto-deploy via GitHub Actions (SSH)
+
+---
+
+## 📊 Monitoring
+
+### CPU Utilization (CloudWatch)
+
+![CPU Utilization](./assets/cpu.png)
+CloudWatch → CPU alerts
+
+### Uptime Monitoring
+
+![Uptime Monitoring](./assets/uptime.png)
+UptimeRobot → uptime checks (5 min)
+
+---
+
+## 🔐 GitHub Secrets
+
+DOCKER_USERNAME
+DOCKER_PASSWORD
+EC2_HOST
+EC2_USER
+EC2_KEY
+
+---
+
+## 🧪 Run Locally
 
 ```bash
 git clone https://github.com/aasthakumarii/devops-cicd-aws.git
 cd devops-cicd-aws
+npm install
+npm test
+node app.js
 ```
 
-2. Install dependencies
-   npm install
-3. Run tests
-   npm test
-4. Run the app
-   node index.js
-   🐳 Docker Usage
-   Build Docker Image
-   docker build -t yourusername/devops-app .
-   Run Container
-   docker run -p 3000:3000 yourusername/devops-app
-   🔐 GitHub Secrets Setup
+---
 
-Add the following secrets in your GitHub repository:
+## 🧠 Key Learnings
 
-DOCKER_USERNAME
-DOCKER_PASSWORD (use Docker Hub Access Token)
-⚡ GitHub Actions Workflow
-Trigger
-Runs on every push to dev and main
-Steps
-Install dependencies (npm ci)
-Run tests (npm test)
-Build Docker image
-Push image to Docker Hub (only on main branch)
-📦 Docker Image
+Built end-to-end CI/CD pipeline
+Automated Docker-based deployment
+Worked with AWS EC2 and S3
+Implemented monitoring and alerts
+Debugged real-world DevOps issues
 
-After a successful pipeline run, your image will be available at:
+---
 
-https://hub.docker.com/r/yourusername/devops-app
-🧠 Key Learnings
-Building CI/CD pipelines using GitHub Actions
-Automating testing and Docker builds
-Handling real-world CI/CD issues and debugging
-Secure credential management using GitHub Secrets
-🔮 Future Improvements
-Deploy to AWS (EC2 / ECS / Kubernetes)
-Add Docker layer caching
-Implement Continuous Deployment (CD)
-Add monitoring and logging
-👩‍💻 Author
+## 👩‍💻 Author
 
 Aastha Kumari
 
 ⭐ Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub!
+If you found this project useful, give it a ⭐ on GitHub!
